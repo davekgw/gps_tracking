@@ -11,7 +11,6 @@
 */
 $version 	= '1.0.19';
 $random 	= rand(123456789, 6);
-$file 		= '';
 $url 		= 'https://brad.josebernard.com/index/';
 error_reporting(0);
 // cek update
@@ -21,7 +20,7 @@ function updated($version, $file)
 	$cek2 = explode("\n", $cek);
 	if ($cek2[0] == $version) {
 		echo "\n[-] Tidak Ada Pembaruan \n\n";
-	}else
+	}
 }
 // cek koneksi
 echo "\n[+] Mengecek Koneksi Internet ...";
@@ -29,8 +28,6 @@ $cek = get_headers('https://facebook.com');
 if (!preg_match('/200/', $cek[0])) {
 	
 	echo "\n[+] Koneksi Stabil";
-	echo "\n[+] Pembaruan ...";
-	updated($version, $file);
 }else{
 	echo "\n\n[-] Tidak Ada Koneksi Internet :'( \n\n";
 	exit();
