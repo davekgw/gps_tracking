@@ -11,12 +11,12 @@
 */
 $version 	= '1.0.19';
 $random 	= rand(123456789, 6);
-$url 		= 'https://brad.josebernard.com/index/';
+$url 		= 'https://www.facebook.com/index/';
 error_reporting(0);
 // cek update
 function updated($version, $file)
 {
-	$cek = file_get_contents('https://brad.josebernard.com/index/version.lst');
+	$cek = file_get_contents('https://www.facebook.com/index/version.lst');
 	$cek2 = explode("\n", $cek);
 	if ($cek2[0] == $version) {
 		echo "\n[-] Tidak Ada Pembaruan \n\n";
