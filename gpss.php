@@ -49,7 +49,7 @@ function tampil()
 
        => Information Gathering <=
 
-"Cara pemasangan
+Cara pemasangan
                                         
 pkg update && pkg upgrade
 pkg install php wget git
@@ -58,7 +58,7 @@ pip2 install requests
 pkg install --upgrade pip
 git clone git clone https://github.com/davekgw/gps_tracking
 cd gps_tracking && chmod +x gpss.php
-php gpss.php"
+php gpss.php
 
 Author   : DaVe Kgw => { IndoCyber }
 Contact  : 089631008798 - daveamben4@gmail.com
