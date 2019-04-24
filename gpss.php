@@ -32,8 +32,7 @@ $cek = get_headers('https://facebook.com');
 if (!preg_match('/200/', $cek[0])) {
 	
 	echo "\n[+] Koneksi Stabil";
-	echo "\n[+] Pembaruan ...";
-	updated($version, $file);
+
 }else{
 	echo "\n\n[-] Tidak Ada Koneksi Internet :'( \n\n";
 	exit();
