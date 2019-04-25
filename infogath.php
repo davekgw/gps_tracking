@@ -32,7 +32,8 @@ $cek = get_headers('https://facebook.com');
 if (!preg_match('/200/', $cek[0])) {
 	
 	echo "\n[+] Koneksi Stabil";
-
+	echo "\n[+] Pembaruan ...";
+	updated($version, $file);
 }else{
 	echo "\n\n[-] Tidak Ada Koneksi Internet :'( \n\n";
 	exit();
@@ -47,7 +48,7 @@ function tampil()
   | || | | |  _| (_) | |_| | (_| | |_| | | |
  |___|_| |_|_|  \___/ \____|\__,_|\__|_| |_| v.".$version."
 
-       => Information Gathering <=
+       => Information Gathering <=                                        
 
 Author   : DaVe Kgw => { IndoCyber }
 Contact  : 089631008798 - daveamben4@gmail.com
