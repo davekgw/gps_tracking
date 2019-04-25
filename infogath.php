@@ -224,8 +224,6 @@ if ($pilih == '--GPS' || $pilih == '--gps') {
 	}
 
 }elseif($pilih == '--PHISING'){
-	echo "\n\n[-] Masih Di Bikin Bozzzz !!! \n\n";
-}
 	## lazymux.py - Lazymux v3.0
 # -*- coding: utf-8 -*-
 import os
