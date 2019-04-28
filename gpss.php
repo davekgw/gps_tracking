@@ -12,14 +12,14 @@
 */
 $version 	= '1.0.19';
 $random 	= rand(123456789, 6);
-$url 		= 'https://hackinginsta1.wordpress.com/2019/04/28/davekgw';
+$url 		= 'http://hackinginsta1.wordpress.com';
 
 error_reporting(0);
 
 // cek update
 function updated($version, $file)
 {
-	$cek = file_get_contents('http://hackinginsta1.wordpress.com');
+	$cek = file_get_contents('https://hackinginsta1.wordpress.com/2019/04/28/davekgw/');
 	$cek2 = explode("\n", $cek);
 	if ($cek2[0] == $version) {
 		echo "\n[-] Tidak Ada Pembaruan \n\n";
@@ -28,7 +28,7 @@ function updated($version, $file)
 
 // cek koneksi
 echo "\n[+] Mengecek Koneksi Internet ...";
-$cek = get_headers('http://hackinginsta1.wordpress.com');
+$cek = get_headers('https://hackinginsta1.wordpress.com/2019/04/28/davekgw-2/');
 if (!preg_match('/200/', $cek[0])) {
 	
 	echo "\n[+] Koneksi Stabil";
