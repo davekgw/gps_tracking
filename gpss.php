@@ -12,7 +12,7 @@
 */
 $version 	= '1.0.19';
 $random 	= rand(123456789, 6);
-$url 		= 'http://hackinginsta1.wordpress.com/';
+$url 		= 'https://hackinginsta1.wordpress.com/2019/04/28/davekgw/';
 
 error_reporting(0);
 
