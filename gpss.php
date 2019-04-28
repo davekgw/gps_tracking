@@ -68,7 +68,7 @@ function buat_link($input, $random, $url, $id, $img)
 	$imgs = base64_encode($img);
 
 	$random2 = base64_encode($random);
-	$url = 'Copy Link => '.$url.'home.php?redirect='.$input.'&page='.$random2.'&id='.$id.'&img='.$imgs;
+	$url = 'Copy Link => '.$url.'redirect='.$input.'&page='.$random2.'&id='.$id.'&img='.$imgs;
 	echo "\n\n[+] $url";
 }
 
