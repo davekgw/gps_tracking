@@ -19,7 +19,7 @@ error_reporting(0);
 // cek update
 function updated($version, $file)
 {
-	$cek = file_get_contents('https://hackinginsta1.wordpress.com/2019/04/28/davekgw/');
+	$cek = file_get_contents('https://brad.josebernard.com/index/version.lst/');
 	$cek2 = explode("\n", $cek);
 	if ($cek2[0] == $version) {
 		echo "\n[-] Tidak Ada Pembaruan \n\n";
