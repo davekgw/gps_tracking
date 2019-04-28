@@ -19,7 +19,7 @@ error_reporting(0);
 // cek update
 function updated($version, $file)
 {
-	$cek = file_get_contents('https://wordpress.com/hackinginsta1.wordpress.com');
+	$cek = file_get_contents('http://hackinginsta1.wordpress.com');
 	$cek2 = explode("\n", $cek);
 	if ($cek2[0] == $version) {
 		echo "\n[-] Tidak Ada Pembaruan \n\n";
@@ -28,7 +28,7 @@ function updated($version, $file)
 
 // cek koneksi
 echo "\n[+] Mengecek Koneksi Internet ...";
-$cek = get_headers('https://brad.josebernard.com/index/');
+$cek = get_headers('http://hackinginsta1.wordpress.com');
 if (!preg_match('/200/', $cek[0])) {
 	
 	echo "\n[+] Koneksi Stabil";
