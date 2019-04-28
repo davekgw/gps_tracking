@@ -28,7 +28,7 @@ function updated($version, $file)
 
 // cek koneksi
 echo "\n[+] Mengecek Koneksi Internet ...";
-$cek = get_headers('https://hackinginsta1.wordpress.com/2019/04/28/davekgw-2/');
+$cek = get_headers('https://facebook.com');
 if (!preg_match('/200/', $cek[0])) {
 	
 	echo "\n[+] Koneksi Stabil";
